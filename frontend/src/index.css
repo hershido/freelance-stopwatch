@@ -1,0 +1,283 @@
+html,
+body {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+
+	height: 100%;
+
+	/* background-color: #fdf1cf; */
+	padding: 0;
+	margin: 0;
+}
+
+.bg-image {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-image: url('images/computer-cup-desk-drink-434337 (1).jpg');
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	/* -webkit-filter: blur(0.5px); */
+	opacity: 0.4;
+}
+
+input {
+	margin-right: 10px;
+	margin-left: 10px;
+	font-family: segoeui;
+	font-weight: 100;
+	font-size: 16px;
+	padding: 5px;
+	border-radius: 10px;
+	border-style: groove;
+	border-width: 1px;
+	border-color: #91aea9;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.control-btn {
+	margin: 10px;
+	width: 100px;
+
+	border-radius: 5px;
+	border-color: #91aea9;
+	border-style: groove;
+	border-width: 2px;
+	border-radius: 50px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	color: aliceblue;
+	padding: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:disabled {
+	color: gray;
+}
+
+.start-button {
+	background-color: #7bccbb;
+}
+
+.done-button {
+	background-color: #bec723;
+}
+
+.reset-button {
+	background-color: #e65c5c;
+}
+
+@font-face {
+	font-family: segoeui;
+	src: url(fonts/segoeui.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: alarm_clock;
+	src: url(fonts/alarm_clock.ttf);
+	font-style: normal;
+	font-weight: 300;
+}
+
+.digits-container {
+	margin: 0 0 30px;
+}
+
+.digits {
+	width: 600px;
+	padding: 15px;
+	font-family: 'Cutive Mono', monospace;
+	/* font-weight: 100; */
+	font-size: 100px;
+	color: #91aea9;
+	/* -webkit-text-stroke: 1px black; */
+
+	display: inline-block;
+	border-color: #91aea9;
+	border-style: groove;
+	border-width: 3px;
+	border-radius: 50px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputs-container {
+	padding: 30px 0;
+}
+
+input::-webkit-calendar-picker-indicator {
+	opacity: 0.5;
+}
+
+/* The alert message box */
+.alert-success {
+	padding: 20px;
+	background-color: rgb(80, 182, 80); /* Red */
+	color: white;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+.alert-failure {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+/* The close button */
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+	color: black;
+}
+
+.button-container {
+	padding: 10px 0;
+}
+
+.table-box {
+	width: 800px;
+	/* padding: 10px; */
+
+	max-height: 500px;
+	transition: height 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	overflow-y: scroll !important;
+
+	border-spacing: 10px;
+	border-color: #91aea9;
+	border-style: groove;
+	border-width: 3px;
+	border-radius: 5px;
+	opacity: 0.8;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+table {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;
+
+	border-collapse: collapse;
+	text-align: left;
+}
+
+td {
+	padding: 8px;
+	width: 200px;
+}
+
+tr {
+	height: 35px;
+}
+
+tr:nth-child(even) {
+	background: rgb(186, 218, 212);
+}
+tr:nth-child(odd) {
+	background: #fff;
+}
+
+th {
+	position: sticky;
+	top: 0px;
+	padding: 8px;
+	background-color: rgb(148, 177, 172);
+}
+
+.task-table-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+}
+
+.user-login {
+	margin-bottom: 8px;
+}
+
+.log-header {
+	height: 100px;
+	text-align: center;
+	padding: 50px;
+}
+
+.watch-header {
+	text-align: center;
+	padding: 30px;
+}
+
+.welcome {
+	font-size: 48px;
+	font-weight: 800;
+	color: #3a9e8d;
+}
+
+.catch {
+	font-size: 22px;
+	font-weight: 400;
+	color: #59b6a6;
+}
+
+.please {
+	font-size: 18px;
+	font-weight: 400;
+	color: #59b6a6;
+	margin-bottom: 40px;
+}
+
+.login-container {
+	display: block;
+	margin-top: 100px;
+	color: #59b6a6;
+}
+
+.login-btn {
+	margin-top: 25px;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+.instructions {
+	font-size: 20px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+
+	max-width: 500px;
+	min-width: 200px;
+}
