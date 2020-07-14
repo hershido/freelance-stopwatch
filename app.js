@@ -16,10 +16,6 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/tasks', taskRoutes);
 
-app.get('/', (req, res) => {
-	res.send('hi');
-});
-
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('frontend/build'));
 
