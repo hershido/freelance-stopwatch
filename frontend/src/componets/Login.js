@@ -16,7 +16,7 @@ function Login(props) {
 		const password = event.target.password.value;
 
 		// validate data in server (Fetch)
-		fetch('approutes/users/login', {
+		fetch('/users/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json', // body type
