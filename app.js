@@ -13,8 +13,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/users', userRoutes);
-app.use('/tasks', taskRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api//tasks', taskRoutes);
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('frontend/build'));

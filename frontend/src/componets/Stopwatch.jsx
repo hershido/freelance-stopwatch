@@ -137,7 +137,7 @@ function Stopwatch() {
 		setStartButton('Start');
 		setClockState(States.PENDING);
 		// send request to server
-		fetch('http://localhost:5000/tasks/', {
+		fetch('/tasks/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json', // body type
@@ -182,7 +182,7 @@ function Stopwatch() {
 			.then(getUserTasks)
 			.then(getUser);
 
-		fetch('http://localhost:5000/users/updateuser', {
+		fetch('/users/updateuser', {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json', // body type
@@ -228,7 +228,7 @@ function Stopwatch() {
 		});
 	}
 	function getUserTasks() {
-		fetch('http://localhost:5000/tasks/' + user, {
+		fetch('/tasks/' + user, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json', // body type
@@ -287,7 +287,7 @@ function Stopwatch() {
 	// run code after every render
 
 	function getUser() {
-		fetch('http://localhost:5000/users/getfname/' + user)
+		fetch('/users/getfname/' + user)
 			.then(response => response.json())
 			.then(data => {
 				setUserData(data);
@@ -307,11 +307,7 @@ function Stopwatch() {
 		return <Redirect to='/login' />;
 	}
 
-	const onDoneDisabled =
-		!taskInput.task ||
-		!taskInput.category ||
-		!taskInput.client ||
-		(timer.seconds === 0 && timer.minutes === 0 && timer.hours === 0);
+	const onDoneDisabled = !taskInput.task || !taskInput.category || !taskInput.client || (timer.seconds === 0 && timer.minutes === 0 && timer.hours === 0);
 
 	const onStartDisabled = !taskInput.task || !taskInput.category || !taskInput.client;
 
@@ -321,33 +317,15 @@ function Stopwatch() {
 			{console.log(tasksArray)}
 			<header className='watch-header'>
 				<h1 className='welcome'>Hi {userData && userData.fname}, get That work done!</h1>
-				<p className='instructions'>
-					Enter a new task and hit that "Start" button, you can always pause and resume, and when your finished with your
-					task hit "Done".
-				</p>
+				<p className='instructions'>Enter a new task and hit that "Start" button, you can always pause and resume, and when your finished with your task hit "Done".</p>
 			</header>
 
 			<Clock timer={timer} />
-			<BtnsContainer
-				onStart={watchToggle}
-				onDone={watchDone}
-				onDiscard={watchReset}
-				startText={btnText[clockState]}
-				onStartDisabled={onStartDisabled}
-				onDoneDisabled={onDoneDisabled}
-			/>
+			<BtnsContainer onStart={watchToggle} onDone={watchDone} onDiscard={watchReset} startText={btnText[clockState]} onStartDisabled={onStartDisabled} onDoneDisabled={onDoneDisabled} />
 
 			<div className='inputs-container'>
 				<Input onChange={handleInput2} name='task' placeholder='Enter task' value={taskInput.task} />
-				<Input
-					onChange={handleInput2}
-					type='text'
-					name='category'
-					list='categoryList'
-					placeholder='Category'
-					value={taskInput.category}
-					autoComplete='off'
-				/>
+				<Input onChange={handleInput2} type='text' name='category' list='categoryList' placeholder='Category' value={taskInput.category} autoComplete='off' />
 
 				<datalist id='categoryList'>
 					{userData &&
@@ -356,14 +334,7 @@ function Stopwatch() {
 						})}
 				</datalist>
 
-				<input
-					onChange={handleInput}
-					name='client'
-					list='clientList'
-					placeholder='Enter Client'
-					value={taskInput.client}
-					autoComplete='off'
-				/>
+				<input onChange={handleInput} name='client' list='clientList' placeholder='Enter Client' value={taskInput.client} autoComplete='off' />
 
 				<datalist id='clientList'>
 					{userData &&
@@ -377,15 +348,7 @@ function Stopwatch() {
 
 			<div className='filterContainer'>
 				{/* <input onChange={handleInput} name='task' placeholder='Enter task' value={taskInput.task} autoComplete='off'></input> */}
-				<input
-					onChange={handleFilter}
-					type='text'
-					name='category'
-					list='categoryList'
-					placeholder='Category'
-					value={filter.category}
-					autoComplete='off'
-				/>
+				<input onChange={handleFilter} type='text' name='category' list='categoryList' placeholder='Category' value={filter.category} autoComplete='off' />
 
 				<datalist id='categoryList'>
 					{userData &&
@@ -394,14 +357,7 @@ function Stopwatch() {
 						})}
 				</datalist>
 
-				<input
-					onChange={handleFilter}
-					name='client'
-					list='clientList'
-					placeholder='Client'
-					value={filter.client}
-					autoComplete='off'
-				/>
+				<input onChange={handleFilter} name='client' list='clientList' placeholder='Client' value={filter.client} autoComplete='off' />
 
 				<datalist id='clientList'>
 					{userData &&
@@ -412,8 +368,7 @@ function Stopwatch() {
 			</div>
 			<TaskTable tasks={tasksArray} ref={tableRef} />
 			<h3>
-				Total task duration {('0' + totalDuration.hours.toString()).slice(-2)}:
-				{('0' + totalDuration.minutes.toString()).slice(-2)}:{('0' + totalDuration.seconds.toString()).slice(-2)}
+				Total task duration {('0' + totalDuration.hours.toString()).slice(-2)}:{('0' + totalDuration.minutes.toString()).slice(-2)}:{('0' + totalDuration.seconds.toString()).slice(-2)}
 			</h3>
 		</div>
 	);
