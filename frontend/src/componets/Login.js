@@ -76,7 +76,7 @@ function Login(props) {
 					</button>
 					<br />
 					<p>Or</p>
-					<a href='http://localhost:3000/register'>Register as a new user</a>
+					<a href='/register'>Register as a new user</a>
 				</form>
 			</div>
 		</div>
