@@ -1,6 +1,5 @@
 //jshint esversion:6
-const express = require('./node_modules/express');
-const routes = require('./node_modules/express').Router();
+const routes = require('express').Router();
 const { Task } = require('../db');
 
 routes

@@ -1,9 +1,8 @@
 //jshint esversion:8
-const express = require('./node_modules/express');
-const routes = require('./node_modules/express').Router();
+const routes = require('express').Router();
 const { User } = require('../db');
 const taskRoute = require('./tasks');
-const bcrypt = require('./node_modules/bcrypt');
+const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 routes.use('/tasks', taskRoute);
